@@ -4,18 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 [RequireComponent(typeof(Rigidbody))]
-public class DropItemBehavior : MonoBehaviour, IPointerDownHandler
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(MeshFader))]
+[RequireComponent(typeof(Collider))]
+public abstract class DropItemBehavior : MonoBehaviour, IPointerDownHandler
 {
-    private Rigidbody rigid;
-    private PlayerController playerController;
-    public float explosionForce = 10f;
-    private int amount;
-    private void Awake()
+    protected Rigidbody rigid;
+    protected AudioSource audioSource;
+    protected PlayerController playerController;
+    protected MeshFader meshFader;
+    protected Collider col;
+    public float explosionForce = 250f;
+    protected virtual void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        playerController = GameObject.FindObjectOfType<PlayerController>();
-        if (playerController == null)
-            throw new Exception("PlayerController not set yet!");
+        audioSource = GetComponent<AudioSource>();
+        playerController = GameManager.GetInstance().PlayerController;
+        meshFader = GetComponent<MeshFader>();
+        col = GetComponent<Collider>();
     }
 
     private void OnEnable()
@@ -23,14 +29,6 @@ public class DropItemBehavior : MonoBehaviour, IPointerDownHandler
         rigid.AddExplosionForce(explosionForce, transform.position + UnityEngine.Random.insideUnitSphere, 1f);
     }
 
-    public void SetData(int val)
-    {
-        amount = val;
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        playerController.AddCoin(amount);
-        Debug.Log("Click");
-    }
+    public abstract void SetData(DropItemData.DropItemSetting setting);
+    public abstract void OnPointerDown(PointerEventData eventData);
 }

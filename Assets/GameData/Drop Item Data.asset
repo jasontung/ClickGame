@@ -13,10 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropItemSettings:
   - id: 1
-    itemPrefab: {fileID: 114898686808559812, guid: 26ef1d1e066695a4c8e2c90aea6c5f25,
+    itemPrefab: {fileID: 114016154916123200, guid: 26ef1d1e066695a4c8e2c90aea6c5f25,
       type: 2}
     coinAmount: 1
   - id: 2
-    itemPrefab: {fileID: 114381415894270264, guid: c24bca5c743541c4aa1c5e92101c8d3c,
+    itemPrefab: {fileID: 114645083206773452, guid: c24bca5c743541c4aa1c5e92101c8d3c,
       type: 2}
     coinAmount: 100

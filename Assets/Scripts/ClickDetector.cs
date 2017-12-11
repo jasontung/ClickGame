@@ -11,9 +11,7 @@ public class ClickDetector : MonoBehaviour, IPointerDownHandler
     private void Awake()
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
-        playerController = GameObject.FindObjectOfType<PlayerController>();
-        if (playerController == null)
-            throw new Exception("PlayerController not set yet!");
+        playerController = GameManager.GetInstance().PlayerController;
     }
 
     public void OnPointerDown(PointerEventData eventData)

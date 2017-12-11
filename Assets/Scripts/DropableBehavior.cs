@@ -5,13 +5,10 @@ using UnityEngine;
 
 public class DropableBehavior : MonoBehaviour
 {
-    private DropItemController dropItemController;
-
+    private DropItemData dropItemData;
     private void Awake()
     {
-        dropItemController = GameObject.FindObjectOfType<DropItemController>();
-        if (dropItemController == null)
-            throw new Exception("DropItemData not set yet!");
+        dropItemData = GameDataContainer.GetInstance().dropItemData;
     }
 
     public void CheckDropItem(int itemId, float dropProbability)
@@ -19,9 +16,9 @@ public class DropableBehavior : MonoBehaviour
         float randomNum = UnityEngine.Random.value;
         if (randomNum <= dropProbability)
         {
-            var itemSetting = dropItemController.Get(itemId);
+            var itemSetting = dropItemData.Get(itemId);
             DropItemBehavior dropItem = Instantiate(itemSetting.itemPrefab, transform.position + transform.up, transform.rotation);
-            dropItem.SetData(itemSetting.coinAmount);
+            dropItem.SetData(itemSetting);
         }
     }
 }

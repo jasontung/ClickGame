@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 [CreateAssetMenu]
-public class LevelData : ScriptableObject {
+public class LevelData : ScriptableObject
+{
     [Serializable]
     public class LevelSetting
     {
@@ -13,5 +14,4 @@ public class LevelData : ScriptableObject {
     }
 
     public LevelSetting[] levelSettings;
-	
 }

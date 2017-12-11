@@ -4,35 +4,53 @@ using UnityEngine;
 
 public class MeshFader : MonoBehaviour
 {
-    public Renderer fadeRenderer;
+    public Renderer[] fadeRenderers;
     public float speed = 1f;
 
     public IEnumerator FadeIn()
     {
         StopCoroutine(FadeOut());
-        var color = fadeRenderer.material.color;
-        color.a = 0;
-        fadeRenderer.material.color = color;
-        while (color.a < 1f)
+        float alpha = 0;
+        for (int i = 0; i < fadeRenderers.Length; i++)
         {
-            color.a += Time.deltaTime * speed;
-            color.a = Mathf.Min(1, color.a);
-            fadeRenderer.material.color = color;
+            Color color = fadeRenderers[i].material.color;
+            color.a = alpha;
+            fadeRenderers[i].material.color = color;
+        }
+        while (alpha < 1f)
+        {
+            alpha += Time.deltaTime * speed;
+            alpha = Mathf.Min(1, alpha);
+            for (int i = 0; i < fadeRenderers.Length; i++)
+            {
+                Color color = fadeRenderers[i].material.color;
+                color.a = alpha;
+                fadeRenderers[i].material.color = color;
+            }
             yield return null;
         }
     }
-   
+
     public IEnumerator FadeOut()
     {
         StopCoroutine(FadeIn());
-        var color = fadeRenderer.material.color;
-        color.a = 1;
-        fadeRenderer.material.color = color;
-        while (color.a > 0f)
+        float alpha = 1;
+        for (int i = 0; i < fadeRenderers.Length; i++)
         {
-            color.a -= Time.deltaTime * speed;
-            color.a = Mathf.Max(0, color.a);
-            fadeRenderer.material.color = color;
+            Color color = fadeRenderers[i].material.color;
+            color.a = alpha;
+            fadeRenderers[i].material.color = color;
+        }
+        while (alpha > 0f)
+        {
+            alpha -= Time.deltaTime * speed;
+            alpha = Mathf.Max(0, alpha);
+            for (int i = 0; i < fadeRenderers.Length; i++)
+            {
+                Color color = fadeRenderers[i].material.color;
+                color.a = alpha;
+                fadeRenderers[i].material.color = color;
+            }
             yield return null;
         }
     }

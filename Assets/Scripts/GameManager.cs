@@ -1,18 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(EnemyController))]
 [RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(GameUIController))]
 public class GameManager : MonoBehaviour
 {
-    private EnemyController enemyController;
-    private PlayerController playerController;
-    public StageData stageData;
-   
+    private static GameManager instance;
+    public static GameManager GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = GameObject.FindObjectOfType<GameManager>();
+            if (instance == null) throw new Exception("GameManager不存在於場景中，請在場景中添加");
+            instance.Initialize();
+        }
+        return instance;
+    }
+    public EnemyController EnemyController { private set; get; }
+    public PlayerController PlayerController { private set; get; }
+    public GameUIController GameUIController { private set; get; }
+
     private void Awake()
     {
-        enemyController = GetComponent<EnemyController>();
-        playerController = GetComponent<PlayerController>();
+        GetInstance();
+    }
+
+    private void Initialize()
+    {
+        EnemyController = GetComponent<EnemyController>();
+        PlayerController = GetComponent<PlayerController>();
+        GameUIController = GetComponent<GameUIController>();
     }
 
     // Use this for initialization
@@ -27,14 +46,11 @@ public class GameManager : MonoBehaviour
 
     IEnumerator PlayPhase()
     {
-        for (int i = 0; i < stageData.enemys.Length; i++)
-        {
-            yield return StartCoroutine(enemyController.Execute(stageData.enemys[i]));
-        }
+        yield return StartCoroutine(EnemyController.Execute());
     }
 
     IEnumerator EndPhase()
     {
-        yield return null;
+        yield return StartCoroutine(GameUIController.stageClearEffect.Show());
     }
 }

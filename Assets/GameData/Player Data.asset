@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9ebccc16606a9f42b048580b9904fa9, type: 3}
   m_Name: Player Data
   m_EditorClassIdentifier: 
-  lv: 0
-  attack: 1
-  exp: 0
-  coin: 0
+  lv: 7
+  attack: 7
+  exp: 610
+  coin: 617

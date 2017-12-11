@@ -13,32 +13,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelSettings:
   - exp: 10
-    attack: 2
+    attack: 1
     hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 20
-    attack: 4
+    attack: 2
     hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 40
-    attack: 8
-    hitEffect: {fileID: 0}
+    attack: 3
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 80
-    attack: 16
-    hitEffect: {fileID: 0}
+    attack: 4
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 160
-    attack: 32
-    hitEffect: {fileID: 0}
+    attack: 5
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 320
-    attack: 64
-    hitEffect: {fileID: 0}
+    attack: 6
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 640
-    attack: 128
-    hitEffect: {fileID: 0}
+    attack: 7
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 1280
-    attack: 516
-    hitEffect: {fileID: 0}
+    attack: 8
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 2560
-    attack: 1024
-    hitEffect: {fileID: 0}
+    attack: 9
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}
   - exp: 5120
-    attack: 2048
-    hitEffect: {fileID: 0}
+    attack: 10
+    hitEffect: {fileID: 19811986, guid: 6636b3078b0905e489f698a11b7a6b6b, type: 2}

@@ -9,13 +9,12 @@ using UnityEngine;
 [RequireComponent(typeof(DropableBehavior))]
 public class EnemyBehavior : MonoBehaviour
 {
-    public const string animDeadClipName = "die";
-    public const string animHurtClipName = "hurt";
     private Animator animator;
     private HealthBehavior healthBehavior;
     private MeshFader meshFader;
     private AudioSource audioSource;
     private DropableBehavior dropableBehavior;
+    private PlayerController playerController;
     private EnemyData enemyData;
     [SerializeField]
     private AudioClip hurtClip;
@@ -35,6 +34,7 @@ public class EnemyBehavior : MonoBehaviour
         meshFader = GetComponent<MeshFader>();
         animator = GetComponent<Animator>();
         dropableBehavior = GetComponent<DropableBehavior>();
+        playerController = GameManager.GetInstance().PlayerController;
     }
 
     public IEnumerator Execute(EnemyData data)
@@ -46,10 +46,11 @@ public class EnemyBehavior : MonoBehaviour
             yield return null;
         }
         isDead = true;
-        animator.Play(animDeadClipName);
+        animator.SetTrigger("die");
         audioSource.clip = deadClip;
         audioSource.Play();
         dropableBehavior.CheckDropItem(enemyData.willDropItemId, enemyData.dropProbability);
+        playerController.AddExp(enemyData.health);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         yield return StartCoroutine(meshFader.FadeOut());
         Destroy(gameObject);
@@ -63,7 +64,7 @@ public class EnemyBehavior : MonoBehaviour
     public void DoDamage(int attack)
     {
         healthBehavior.Hurt(attack);
-        animator.Play(animHurtClipName,0,0);
+        animator.SetTrigger("hurt");
         audioSource.clip = hurtClip;
         audioSource.Play();
     }
