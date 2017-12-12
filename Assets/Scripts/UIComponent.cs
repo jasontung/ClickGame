@@ -10,7 +10,7 @@ public class UIComponent : MonoBehaviour {
         gameObject.SetActive(false);
     }
 
-    public IEnumerator Show()
+    public virtual IEnumerator Show()
     {
         gameObject.SetActive(true);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);

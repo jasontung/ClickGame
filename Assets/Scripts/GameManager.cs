@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyController))]
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(GameUIController))]
+[RequireComponent(typeof(AudioController))]
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public EnemyController EnemyController { private set; get; }
     public PlayerController PlayerController { private set; get; }
     public GameUIController GameUIController { private set; get; }
+    public AudioController AudioController { private set; get; }
 
     private void Awake()
     {
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
         EnemyController = GetComponent<EnemyController>();
         PlayerController = GetComponent<PlayerController>();
         GameUIController = GetComponent<GameUIController>();
+        AudioController = GetComponent<AudioController>();
     }
 
     // Use this for initialization

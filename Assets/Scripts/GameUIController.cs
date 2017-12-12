@@ -10,6 +10,7 @@ public class GameUIController : MonoBehaviour {
     public UIComponent levelUpEffect;
     public UIComponent bossMsgEffect;
     public UIComponent stageClearEffect;
+    public CountDownTimer countDownTimerEffect;
 
     public void UpdateLv(int lv)
     {

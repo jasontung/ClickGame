@@ -15,6 +15,7 @@ public class EnemyBehavior : MonoBehaviour
     private AudioSource audioSource;
     private DropableBehavior dropableBehavior;
     private PlayerController playerController;
+    private GameUIController gameUIController;
     private EnemyData enemyData;
     [SerializeField]
     private AudioClip hurtClip;
@@ -35,16 +36,20 @@ public class EnemyBehavior : MonoBehaviour
         animator = GetComponent<Animator>();
         dropableBehavior = GetComponent<DropableBehavior>();
         playerController = GameManager.GetInstance().PlayerController;
+        gameUIController = GameManager.GetInstance().GameUIController;
     }
 
     public IEnumerator Execute(EnemyData data)
     {
         enemyData = data;
         healthBehavior.Init(enemyData.health);
+        if (enemyData.defeatTimeLimit > 0)
+            StartCoroutine(gameUIController.countDownTimerEffect.Show(enemyData.defeatTimeLimit));
         while (healthBehavior.isDead == false)
         {
             yield return null;
         }
+        gameUIController.countDownTimerEffect.Hide();
         isDead = true;
         animator.SetTrigger("die");
         audioSource.clip = deadClip;

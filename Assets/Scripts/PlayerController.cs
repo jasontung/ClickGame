@@ -41,9 +41,10 @@ public class PlayerController : MonoBehaviour
 
     public void RefreshPlayerData()
     {
-        Destroy(hitEffect);
+        if(hitEffect)
+            Destroy(hitEffect.gameObject);
         hitEffect = Instantiate(CurLevelSetting.hitEffect);
-        gameUIController.UpdateAttack(playerData.attack);
+        gameUIController.UpdateAttack(CurLevelSetting.attack);
         gameUIController.UpdateCoin(playerData.coin);
         gameUIController.UpdateLv(playerData.lv);
         gameUIController.UpdateExpSlider(playerData.exp, LastLevelSetting.exp, CurLevelSetting.exp);
@@ -71,9 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         playerData.lv = Mathf.Min(playerData.lv + 1, levelData.levelSettings.Length);
         playerData.attack = CurLevelSetting.attack;
-        gameUIController.UpdateAttack(playerData.attack);
-        gameUIController.UpdateLv(playerData.lv);
-        gameUIController.UpdateExpSlider(playerData.exp, LastLevelSetting.exp, CurLevelSetting.exp);
+        RefreshPlayerData();
         StartCoroutine(gameUIController.levelUpEffect.Show());
     }
 

@@ -8,5 +8,6 @@ public class EnemyData
     public int health = 100;
     public int willDropItemId;
     public float dropProbability;
+    public float defeatTimeLimit;
     public EnemyBehavior enemyPrefab;
 }
