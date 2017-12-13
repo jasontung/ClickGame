@@ -13,5 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lv: 7
   attack: 7
-  exp: 430
-  coin: 412
+  exp: 460
+  coin: 415
+  stageIndex: 1

@@ -29,8 +29,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        playerData = GameDataContainer.GetInstance().playerData;
-        levelData = GameDataContainer.GetInstance().levelData;
+        playerData = GameManager.GetInstance().playerData;
+        levelData = GameManager.GetInstance().levelData;
         gameUIController = GameManager.GetInstance().GameUIController;
     }
 
@@ -78,6 +78,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnClick(EnemyBehavior enemy, Vector3 hitPoint)
     {
+        if (GameManager.GetInstance().IsFail)
+            return;
         if (enemy.isDead)
             return;
         enemy.DoDamage(playerData.attack);

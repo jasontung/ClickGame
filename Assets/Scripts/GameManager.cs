@@ -24,6 +24,25 @@ public class GameManager : MonoBehaviour
     public GameUIController GameUIController { private set; get; }
     public AudioController AudioController { private set; get; }
 
+    public StageData[] stageDatas;
+    public LevelData levelData;
+    public PlayerData playerData;
+    public DropItemData dropItemData;
+
+    public StageData curStageData
+    {
+        get
+        {
+            return stageDatas[playerData.stageIndex];
+        }
+    }
+
+    public bool IsFail
+    {
+        private set;
+        get;
+    }
+
     private void Awake()
     {
         GetInstance();
@@ -54,6 +73,20 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndPhase()
     {
-        yield return StartCoroutine(GameUIController.stageClearEffect.Show());
+        if (IsFail)
+        {
+            yield return StartCoroutine(GameUIController.stageFailEffect.Show());
+        }
+        else
+        {
+            yield return StartCoroutine(GameUIController.stageClearEffect.Show());
+            playerData.stageIndex = Mathf.Min(playerData.stageIndex + 1, stageDatas.Length - 1);
+        }
+        IsFail = false;
+    }
+
+    public void OnTimeUp()
+    {
+        IsFail = true;
     }
 }

@@ -7,6 +7,7 @@ public class PlayerData : ScriptableObject {
     public int attack;
     public int exp;
     public int coin;
+    public int stageIndex;
 
     private void Reset()
     {

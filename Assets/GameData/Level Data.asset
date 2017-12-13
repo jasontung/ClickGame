@@ -38,17 +38,17 @@ MonoBehaviour:
       type: 2}
   - exp: 640
     attack: 7
-    hitEffect: {fileID: 198836051178566280, guid: c0b0cdd5f7feb8c4f8993e0faa317dd5,
+    hitEffect: {fileID: 198635770447775954, guid: 2bc6ba5a6cebbce47bdd834030be501b,
       type: 2}
   - exp: 1280
     attack: 8
-    hitEffect: {fileID: 198836051178566280, guid: c0b0cdd5f7feb8c4f8993e0faa317dd5,
+    hitEffect: {fileID: 198635770447775954, guid: 2bc6ba5a6cebbce47bdd834030be501b,
       type: 2}
   - exp: 2560
     attack: 9
-    hitEffect: {fileID: 198836051178566280, guid: c0b0cdd5f7feb8c4f8993e0faa317dd5,
+    hitEffect: {fileID: 198635770447775954, guid: 2bc6ba5a6cebbce47bdd834030be501b,
       type: 2}
   - exp: 5120
     attack: 10
-    hitEffect: {fileID: 198836051178566280, guid: c0b0cdd5f7feb8c4f8993e0faa317dd5,
+    hitEffect: {fileID: 198635770447775954, guid: 2bc6ba5a6cebbce47bdd834030be501b,
       type: 2}

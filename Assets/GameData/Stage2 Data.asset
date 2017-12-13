@@ -9,30 +9,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cb274e5f3d7eef49b8d0f0f55af9bb4, type: 3}
-  m_Name: Stage Data
+  m_Name: Stage2 Data
   m_EditorClassIdentifier: 
   enemys:
   - health: 10
     willDropItemId: 1
     dropProbability: 1
     defeatTimeLimit: 0
-    enemyPrefab: {fileID: 114836203777475206, guid: c7e6d0dea441efb409d0faf991a8281b,
+    enemyPrefab: {fileID: 114712432015847620, guid: d115facbe0b31344cbfe10f24acfed2c,
       type: 2}
   - health: 20
     willDropItemId: 1
     dropProbability: 1
     defeatTimeLimit: 0
-    enemyPrefab: {fileID: 114624753553511702, guid: a84d640681d6bc44aacad1625a0b47ea,
+    enemyPrefab: {fileID: 114178509586657260, guid: 762a3c66467c1094583f8a6805ac0092,
       type: 2}
   - health: 30
     willDropItemId: 1
     dropProbability: 1
     defeatTimeLimit: 0
-    enemyPrefab: {fileID: 114158476360590834, guid: 558b47eaaaeb46f479d2b7f88997758e,
+    enemyPrefab: {fileID: 114628066171527618, guid: fefe728c1c9da9c489cc1677b3f9a91d,
       type: 2}
   - health: 40
     willDropItemId: 2
     dropProbability: 1
     defeatTimeLimit: 10
-    enemyPrefab: {fileID: 114512983189696286, guid: 9d1f5ad260b5dcf4daf40cdd430de91f,
+    enemyPrefab: {fileID: 114708085347383118, guid: 191919c2bdef31040bdbcc37b533f0df,
       type: 2}

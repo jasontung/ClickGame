@@ -44,9 +44,11 @@ public class EnemyBehavior : MonoBehaviour
         enemyData = data;
         healthBehavior.Init(enemyData.health);
         if (enemyData.defeatTimeLimit > 0)
-            StartCoroutine(gameUIController.countDownTimerEffect.Show(enemyData.defeatTimeLimit));
+            StartCoroutine(StartCountDownTimer());
         while (healthBehavior.isDead == false)
         {
+            if (GameManager.GetInstance().IsFail)
+                yield break;
             yield return null;
         }
         gameUIController.countDownTimerEffect.Hide();
@@ -58,7 +60,14 @@ public class EnemyBehavior : MonoBehaviour
         playerController.AddExp(enemyData.health);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         yield return StartCoroutine(meshFader.FadeOut());
-        Destroy(gameObject);
+    }
+
+    private IEnumerator StartCountDownTimer()
+    {
+        yield return StartCoroutine(gameUIController.countDownTimerEffect.Show(enemyData.defeatTimeLimit));
+        if (isDead)
+            yield break;
+        GameManager.GetInstance().OnTimeUp();
     }
 
     private void OnEnable()

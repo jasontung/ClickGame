@@ -5,18 +5,18 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Transform enemySpawnPoint;
-    private StageData stageData;
     private GameUIController gameUIController;
     private AudioController audioController;
+
     private void Awake()
     {
-        stageData = GameDataContainer.GetInstance().stageData;
         gameUIController = GameManager.GetInstance().GameUIController;
         audioController = GameManager.GetInstance().AudioController;
     }
 
     public IEnumerator Execute()
     {
+        StageData stageData = GameManager.GetInstance().curStageData;
         audioController.PlayBattleSound();
         for (int i = 0; i < stageData.enemys.Length; i++)
         {
@@ -28,6 +28,7 @@ public class EnemyController : MonoBehaviour
             }
             EnemyBehavior enemy = Instantiate(enemyData.enemyPrefab, enemySpawnPoint.position, enemySpawnPoint.rotation);
             yield return StartCoroutine(enemy.Execute(enemyData));
+            Destroy(enemy.gameObject);
         }
         audioController.Stop();
     }
