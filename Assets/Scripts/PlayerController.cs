@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     private PlayerData playerData;
     private LevelData levelData;
-    private ParticleSystem hitEffect;
+    private int hitEffectUseIndex;
+    private ParticleSystem[] hitEffects = new ParticleSystem[3];
     private GameUIController gameUIController;
 
     public LevelData.LevelSetting CurLevelSetting
@@ -41,9 +42,12 @@ public class PlayerController : MonoBehaviour
 
     public void RefreshPlayerData()
     {
-        if(hitEffect)
-            Destroy(hitEffect.gameObject);
-        hitEffect = Instantiate(CurLevelSetting.hitEffect);
+        for(int i = 0; i < hitEffects.Length; i++)
+        {
+            if(hitEffects[i] != null)
+                Destroy(hitEffects[i].gameObject);
+            hitEffects[i] = Instantiate(CurLevelSetting.hitEffect);
+        }
         gameUIController.UpdateAttack(CurLevelSetting.attack);
         gameUIController.UpdateCoin(playerData.coin);
         gameUIController.UpdateLv(playerData.lv);
@@ -61,7 +65,7 @@ public class PlayerController : MonoBehaviour
         if (playerData.lv >= levelData.levelSettings.Length)
             return;
         playerData.exp += amount;
-        gameUIController.UpdateExpSlider(playerData.exp);
+        gameUIController.UpdateExpSlider(playerData.exp, LastLevelSetting.exp, CurLevelSetting.exp);
         if (playerData.exp >= CurLevelSetting.exp)
         {
             LevelUp();
@@ -76,14 +80,17 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(gameUIController.levelUpEffect.Show());
     }
 
-    public void OnClick(EnemyBehavior enemy, Vector3 hitPoint)
+    public void OnClick(EnemyBehavior enemy)
     {
         if (GameManager.GetInstance().IsFail)
             return;
-        if (enemy.isDead)
+        if (enemy.IsDead)
             return;
         enemy.DoDamage(playerData.attack);
-        hitEffect.transform.position = hitPoint;
+        ParticleSystem hitEffect = hitEffects[hitEffectUseIndex];
+        hitEffect.transform.position = enemy.hitPoint.position;
+        hitEffect.Stop();
         hitEffect.Play();
+        hitEffectUseIndex = (int)Mathf.Repeat(hitEffectUseIndex + 1, hitEffects.Length);
     }
 }

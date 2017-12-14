@@ -54,8 +54,25 @@ public class GameManager : MonoBehaviour
         PlayerController = GetComponent<PlayerController>();
         GameUIController = GetComponent<GameUIController>();
         AudioController = GetComponent<AudioController>();
+        Input.multiTouchEnabled = true;
+        LoadSaveData();
     }
 
+    public void Save()
+    {
+        GameDataBase.Save(typeof(PlayerData).Name, playerData);
+    }
+
+    public void LoadSaveData()
+    {
+        playerData = GameDataBase.Load<PlayerData>(typeof(PlayerData).Name);
+    }
+
+    [ContextMenu("Clear Save Data")]
+    public void Clear()
+    {
+        GameDataBase.Clear();
+    }
     // Use this for initialization
     IEnumerator Start()
     {
@@ -73,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator EndPhase()
     {
+        AudioController.Stop();
         if (IsFail)
         {
             yield return StartCoroutine(GameUIController.stageFailEffect.Show());
@@ -88,5 +106,15 @@ public class GameManager : MonoBehaviour
     public void OnTimeUp()
     {
         IsFail = true;
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        Save();
+    }
+
+    private void OnApplicationQuit()
+    {
+        Save();
     }
 }

@@ -29,6 +29,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1019671072784630
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4776657773371236}
+  m_Layer: 0
+  m_Name: HitPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1097810364376738
 GameObject:
   m_ObjectHideFlags: 1
@@ -37,7 +52,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4674237939819354}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4369892866190236}
   - component: {fileID: 137842233592023632}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +83,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4533934840400092}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +139,7 @@ GameObject:
   - component: {fileID: 82069128562371490}
   - component: {fileID: 95539028619482262}
   - component: {fileID: 114683236379453034}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Enemy_Ghost_Brown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +154,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4636729958217880}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GhostControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +169,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4440443719699702}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +201,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4297435503038054}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MESH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,7 +231,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4002978324229596}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadTipJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,8 +246,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4795572527666896}
-  - component: {fileID: 65910669799307288}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +278,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4689844732579836}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: TailControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +293,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4755288960737182}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: TailJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +308,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4416233279268202}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RootJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -454,6 +468,19 @@ Transform:
   m_Father: {fileID: 4416233279268202}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4776657773371236
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019671072784630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.000048527047, y: 0.0088, z: 0.0105}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_Children: []
+  m_Father: {fileID: 4795572527666896}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4795572527666896
 Transform:
   m_ObjectHideFlags: 1
@@ -466,21 +493,10 @@ Transform:
   m_Children:
   - {fileID: 4440443719699702}
   - {fileID: 4416233279268202}
+  - {fileID: 4776657773371236}
   m_Father: {fileID: 4636729958217880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65910669799307288
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922354266536732}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.014958918, y: 0.016251719, z: 0.01}
-  m_Center: {x: 0.00025351046, y: 0.0031258618, z: 0}
 --- !u!82 &82069128562371490
 AudioSource:
   m_ObjectHideFlags: 1
@@ -707,7 +723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
-  deadClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
+  deadClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  hitPoint: {fileID: 4776657773371236}
 --- !u!114 &114713444858266762
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -29,7 +29,8 @@ public class EnemyController : MonoBehaviour
             EnemyBehavior enemy = Instantiate(enemyData.enemyPrefab, enemySpawnPoint.position, enemySpawnPoint.rotation);
             yield return StartCoroutine(enemy.Execute(enemyData));
             Destroy(enemy.gameObject);
+            if (GameManager.GetInstance().IsFail)
+                yield break;
         }
-        audioController.Stop();
     }
 }

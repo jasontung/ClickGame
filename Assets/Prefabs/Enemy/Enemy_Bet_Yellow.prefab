@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4054621234106380}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4159214329012732}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4353734662511564}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4349667680530404}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWingTair2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4775168699846178}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWing3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4279085743103712}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingRootControl1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4842727129731160}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4503626921027816}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RootJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +139,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4235167437264640}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWingTailControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4094711208482132}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4253719032068770}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWingTailControl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4249945313667036}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4865286720957792}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4282135678889166}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4499795278432314}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWingTair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,8 +279,23 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4799929007469558}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl9
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1296545117778340
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4575661559304100}
+  m_Layer: 0
+  m_Name: HitPont
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,7 +324,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4278822530941958}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWing5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +339,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4699066297627122}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +355,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4007345390935314}
   - component: {fileID: 137516359997616048}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +370,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4336262108174906}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -370,7 +385,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4037055618183976}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: NoseControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +400,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4378677156638462}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,8 +415,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4909542267260532}
-  - component: {fileID: 65405583918372632}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Bat1Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +430,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4219991615287808}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: NoseJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -431,7 +445,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4460374733943010}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +460,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4751508853891248}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +475,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4667237071163448}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +490,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4839953604838062}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWingTair3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +539,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4073241987073332}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +554,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4916578625588930}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +569,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4823167229638340}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWing5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -570,7 +584,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4550646342443478}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +599,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4490735749210272}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWingRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +614,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4148699956586902}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingRootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +629,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4407246416731564}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: NoseTipJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +644,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4083740002661618}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingTail3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +659,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4142016484349792}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -667,7 +681,7 @@ GameObject:
   - component: {fileID: 82351187531658210}
   - component: {fileID: 95927381147281740}
   - component: {fileID: 114424606480035296}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Enemy_Bet_Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +696,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4577589747529228}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWing4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -697,7 +711,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4162534389548480}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingTail2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +726,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4956413942287688}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -727,7 +741,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4218164800535390}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: rWingTailControl2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +756,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4954384973497260}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +788,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4473760800560194}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: lWingControl5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,7 +1121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784942445510706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.71, y: 0, z: -2.56}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224365409568872866}
@@ -1203,6 +1217,19 @@ Transform:
   m_Father: {fileID: 4909542267260532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4575661559304100
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296545117778340}
+  m_LocalRotation: {x: -0.056166172, y: -0, z: -0, w: 0.99842143}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0.0105}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_Children: []
+  m_Father: {fileID: 4909542267260532}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4577589747529228
 Transform:
   m_ObjectHideFlags: 1
@@ -1353,6 +1380,7 @@ Transform:
   - {fileID: 4550646342443478}
   - {fileID: 4037055618183976}
   - {fileID: 4503626921027816}
+  - {fileID: 4575661559304100}
   m_Father: {fileID: 4353734662511564}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1397,18 +1425,6 @@ Transform:
   m_Father: {fileID: 4159214329012732}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65405583918372632
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1406104015648336}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.017942406, y: 0.01917047, z: 0.019275809}
-  m_Center: {x: -0.000027415752, y: 0.0076936125, z: -0.00040062904}
 --- !u!82 &82351187531658210
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1638,8 +1654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bfab230ab215644b6c3219715edaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hurtClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
-  deadClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
+  hurtClip: {fileID: 8300000, guid: fce027b40770a44298a6f5a4233bfb04, type: 3}
+  deadClip: {fileID: 8300000, guid: 8c615fd0429f34edf85539d70279360d, type: 3}
+  hitPoint: {fileID: 4575661559304100}
 --- !u!114 &114548902525264550
 MonoBehaviour:
   m_ObjectHideFlags: 1

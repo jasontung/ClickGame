@@ -21,11 +21,14 @@ public class EnemyBehavior : MonoBehaviour
     private AudioClip hurtClip;
     [SerializeField]
     private AudioClip deadClip;
+    public Transform hitPoint;
 
-    public bool isDead
+    public bool IsDead
     {
-        private set;
-        get;
+        get
+        {
+            return healthBehavior.isDead;
+        }
     }
 
     private void Awake()
@@ -45,14 +48,13 @@ public class EnemyBehavior : MonoBehaviour
         healthBehavior.Init(enemyData.health);
         if (enemyData.defeatTimeLimit > 0)
             StartCoroutine(StartCountDownTimer());
-        while (healthBehavior.isDead == false)
+        while (IsDead == false)
         {
             if (GameManager.GetInstance().IsFail)
                 yield break;
             yield return null;
         }
         gameUIController.countDownTimerEffect.Hide();
-        isDead = true;
         animator.SetTrigger("die");
         audioSource.clip = deadClip;
         audioSource.Play();
@@ -65,7 +67,7 @@ public class EnemyBehavior : MonoBehaviour
     private IEnumerator StartCountDownTimer()
     {
         yield return StartCoroutine(gameUIController.countDownTimerEffect.Show(enemyData.defeatTimeLimit));
-        if (isDead)
+        if (IsDead)
             yield break;
         GameManager.GetInstance().OnTimeUp();
     }

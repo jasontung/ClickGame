@@ -28,11 +28,6 @@ public class GameUIController : MonoBehaviour {
         attackLabel.text = attack.ToString();
     }
 
-    public void UpdateExpSlider(int exp)
-    {
-        expSlider.value = exp;
-    }
-
     public void UpdateExpSlider(int exp, int minValue, int maxValue)
     {
         expSlider.minValue = minValue;

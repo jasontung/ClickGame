@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4645495354731726}
   - component: {fileID: 137089597641944184}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: LV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4431073609199578}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: TailControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4156064856816000}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GhostControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4655574656840536}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadTipJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4561707218346858}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: MESH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,8 +130,23 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4367930992656402}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadJoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1513148475856204
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4899109876932280}
+  m_Layer: 0
+  m_Name: HitPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +167,7 @@ GameObject:
   - component: {fileID: 82369027787991718}
   - component: {fileID: 95878039254403072}
   - component: {fileID: 114020396063287504}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Enemy_Ghost_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +197,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4159047150586280}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: TailJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,8 +212,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4597032647506628}
-  - component: {fileID: 65283506935381562}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RootControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +227,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4660571644486324}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RootJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +276,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4670393222302692}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: RIG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +291,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4366867904253674}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: HeadControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,6 +425,7 @@ Transform:
   m_Children:
   - {fileID: 4366867904253674}
   - {fileID: 4660571644486324}
+  - {fileID: 4899109876932280}
   m_Father: {fileID: 4156064856816000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -469,18 +484,19 @@ Transform:
   m_Father: {fileID: 4514720758477348}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!65 &65283506935381562
-BoxCollider:
+--- !u!4 &4899109876932280
+Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1756160447377474}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.014958918, y: 0.016251719, z: 0.01}
-  m_Center: {x: 0.00025351046, y: 0.0031258618, z: 0}
+  m_GameObject: {fileID: 1513148475856204}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.000048527047, y: 0.008800003, z: 0.010500002}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_Children: []
+  m_Father: {fileID: 4597032647506628}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &82369027787991718
 AudioSource:
   m_ObjectHideFlags: 1
@@ -743,7 +759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hurtClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
-  deadClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
+  deadClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
+  hitPoint: {fileID: 4899109876932280}
 --- !u!114 &114679923899165286
 MonoBehaviour:
   m_ObjectHideFlags: 1
