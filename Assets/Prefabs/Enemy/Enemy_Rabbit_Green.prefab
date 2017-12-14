@@ -53,7 +53,6 @@ GameObject:
   - component: {fileID: 4600639953656124}
   - component: {fileID: 114131159641780316}
   - component: {fileID: 114489342425637872}
-  - component: {fileID: 114134940070912626}
   - component: {fileID: 114957897104612360}
   - component: {fileID: 82751846418281588}
   - component: {fileID: 95446348314050776}
@@ -983,17 +982,6 @@ MonoBehaviour:
   hurtClip: {fileID: 8300000, guid: 02e6208ec76314158a9f548f51fe9f11, type: 3}
   deadClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
   hitPoint: {fileID: 4472605095011868}
---- !u!114 &114134940070912626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1082077406342500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5bef7d360c1f3d49b5a6f64582cc2ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114179140929617958
 MonoBehaviour:
   m_ObjectHideFlags: 1
