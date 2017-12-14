@@ -132,13 +132,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4717909225330082}
-  - component: {fileID: 114712432015847620}
-  - component: {fileID: 114878249499763002}
-  - component: {fileID: 114713444858266762}
-  - component: {fileID: 114144078217756696}
   - component: {fileID: 82069128562371490}
   - component: {fileID: 95539028619482262}
-  - component: {fileID: 114683236379453034}
   m_Layer: 0
   m_Name: Enemy_Ghost_Brown
   m_TagString: Untagged
@@ -586,7 +581,7 @@ Animator:
   m_GameObject: {fileID: 1506913190952292}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fd4b310424927a840906404a14eeb5e4, type: 3}
-  m_Controller: {fileID: 22100000, guid: 8d21f395bdca55749a501fe4cc19544d, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -638,20 +633,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111599f7892711840a7cca8bcb4cd320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114144078217756696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506913190952292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe657a1b77f8d244806f1c073836d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeRenderers:
-  - {fileID: 137842233592023632}
-  speed: 1
 --- !u!114 &114294769155617072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -700,42 +681,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114683236379453034
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506913190952292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49f0505f58657146ac6c838f526ad3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114712432015847620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506913190952292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51bfab230ab215644b6c3219715edaaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtClip: {fileID: 8300000, guid: 1d4840678e677424b8921716c72397ea, type: 3}
-  deadClip: {fileID: 8300000, guid: 62366b8d2c37a49dca550841c741317f, type: 3}
-  hitPoint: {fileID: 4776657773371236}
---- !u!114 &114713444858266762
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506913190952292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5bef7d360c1f3d49b5a6f64582cc2ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114760289441257254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -834,20 +779,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114878249499763002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1506913190952292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed882c2de523db4ba1deed23aa07b43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  smooth: 5
-  healthSlider: {fileID: 114856837669535522}
 --- !u!137 &137842233592023632
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

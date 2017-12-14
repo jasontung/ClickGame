@@ -156,13 +156,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4567433676496212}
-  - component: {fileID: 114693292908306066}
-  - component: {fileID: 114776004928372944}
-  - component: {fileID: 114636609915359108}
-  - component: {fileID: 114858220579285770}
   - component: {fileID: 82447416989416052}
   - component: {fileID: 95521420070821372}
-  - component: {fileID: 114313675626600078}
   m_Layer: 0
   m_Name: Enemy_Rabbit_Cyan
   m_TagString: Untagged
@@ -934,7 +929,7 @@ Animator:
   m_GameObject: {fileID: 1279244346074286}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
-  m_Controller: {fileID: 22100000, guid: 83246528d78b2b54fa1a9a2f42aed72f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -969,17 +964,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114313675626600078
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279244346074286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49f0505f58657146ac6c838f526ad3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114521864034894208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1050,31 +1034,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111599f7892711840a7cca8bcb4cd320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114636609915359108
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279244346074286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5bef7d360c1f3d49b5a6f64582cc2ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114693292908306066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279244346074286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51bfab230ab215644b6c3219715edaaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hurtClip: {fileID: 8300000, guid: 02e6208ec76314158a9f548f51fe9f11, type: 3}
-  deadClip: {fileID: 8300000, guid: 1d3bfb9269f136947bf8ac164cace1ff, type: 3}
-  hitPoint: {fileID: 4635453934511056}
 --- !u!114 &114706641143680332
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1096,20 +1055,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114776004928372944
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279244346074286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aed882c2de523db4ba1deed23aa07b43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  smooth: 5
-  healthSlider: {fileID: 114521864034894208}
 --- !u!114 &114779578783954546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1143,20 +1088,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 100
---- !u!114 &114858220579285770
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1279244346074286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe657a1b77f8d244806f1c073836d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeRenderers:
-  - {fileID: 137115360637834484}
-  speed: 1
 --- !u!114 &114876805630233096
 MonoBehaviour:
   m_ObjectHideFlags: 1
