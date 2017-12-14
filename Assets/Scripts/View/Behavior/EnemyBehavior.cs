@@ -15,7 +15,7 @@ public class EnemyBehavior : MonoBehaviour
     private AudioSource audioSource;
     private DropableBehavior dropableBehavior;
     private PlayerController playerController;
-    private EnemyData enemyData;
+    private GameUIController gameUIController;
     private GameStateData gameStateData;
     [SerializeField]
     private AudioClip hurtClip;
@@ -39,13 +39,20 @@ public class EnemyBehavior : MonoBehaviour
         animator = GetComponent<Animator>();
         dropableBehavior = GetComponent<DropableBehavior>();
         playerController = GameFacade.GetInstance().PlayerController;
+        gameUIController = GameFacade.GetInstance().GameUIController;
         gameStateData = GameFacade.GetInstance().gameStateData;
+    }
+
+    private void OnEnable()
+    {
+        StartCoroutine(meshFader.FadeIn());
     }
 
     public IEnumerator Execute(EnemyData data)
     {
-        enemyData = data;
-        healthBehavior.Init(enemyData.health);
+        healthBehavior.Init(data.health);
+        if (data.defeatTimeLimit > 0)
+            StartCoroutine(StartCountDownTimer(data.defeatTimeLimit));
         while (IsDead == false)
         {
             if (gameStateData.isFail)
@@ -55,15 +62,19 @@ public class EnemyBehavior : MonoBehaviour
         animator.SetTrigger("die");
         audioSource.clip = deadClip;
         audioSource.Play();
-        dropableBehavior.CheckDropItem(enemyData.willDropItemId, enemyData.dropProbability);
-        playerController.AddExp(enemyData.health);
+        dropableBehavior.CheckDropItem(data.willDropItemId, data.dropProbability);
+        playerController.AddExp(data.health);
+        gameUIController.countDownTimerEffect.Hide();
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         yield return StartCoroutine(meshFader.FadeOut());
     }
 
-    private void OnEnable()
+    private IEnumerator StartCountDownTimer(float remainTime)
     {
-        StartCoroutine(meshFader.FadeIn());
+        yield return StartCoroutine(gameUIController.countDownTimerEffect.Show(remainTime));
+        if (IsDead)
+            yield break;
+        gameStateData.isFail = true;
     }
 
     public void DoDamage(int attack)
