@@ -6,14 +6,15 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(GameUIController))]
 [RequireComponent(typeof(AudioController))]
-public class GameManager : MonoBehaviour
+[RequireComponent(typeof(GameStateController))]
+public class GameFacade : MonoBehaviour
 {
-    private static GameManager instance;
-    public static GameManager GetInstance()
+    private static GameFacade instance;
+    public static GameFacade GetInstance()
     {
         if (instance == null)
         {
-            instance = GameObject.FindObjectOfType<GameManager>();
+            instance = GameObject.FindObjectOfType<GameFacade>();
             if (instance == null) throw new Exception("GameManager不存在於場景中，請在場景中添加");
             instance.Initialize();
         }
@@ -23,25 +24,12 @@ public class GameManager : MonoBehaviour
     public PlayerController PlayerController { private set; get; }
     public GameUIController GameUIController { private set; get; }
     public AudioController AudioController { private set; get; }
-
+    public GameStateController GameStateController { private set; get; }
     public StageData[] stageDatas;
     public LevelData levelData;
     public PlayerData playerData;
     public DropItemData dropItemData;
-
-    public StageData curStageData
-    {
-        get
-        {
-            return stageDatas[playerData.stageIndex];
-        }
-    }
-
-    public bool IsFail
-    {
-        private set;
-        get;
-    }
+    public GameStateData gameStateData;
 
     private void Awake()
     {
@@ -54,17 +42,8 @@ public class GameManager : MonoBehaviour
         PlayerController = GetComponent<PlayerController>();
         GameUIController = GetComponent<GameUIController>();
         AudioController = GetComponent<AudioController>();
-        Input.multiTouchEnabled = true;
-        LoadSaveData();
-    }
-
-    public void Save()
-    {
-        GameDataBase.Save(typeof(PlayerData).Name, playerData);
-    }
-
-    public void LoadSaveData()
-    {
+        GameStateController = GetComponent<GameStateController>();
+        gameStateData = new GameStateData();
         playerData = GameDataBase.Load<PlayerData>(typeof(PlayerData).Name);
     }
 
@@ -72,40 +51,6 @@ public class GameManager : MonoBehaviour
     public void Clear()
     {
         GameDataBase.Clear();
-    }
-    // Use this for initialization
-    IEnumerator Start()
-    {
-        while (true)
-        {
-            yield return StartCoroutine(PlayPhase());
-            yield return StartCoroutine(EndPhase());
-        }
-    }
-
-    IEnumerator PlayPhase()
-    {
-        yield return StartCoroutine(EnemyController.Execute());
-    }
-
-    IEnumerator EndPhase()
-    {
-        AudioController.Stop();
-        if (IsFail)
-        {
-            yield return StartCoroutine(GameUIController.stageFailEffect.Show());
-        }
-        else
-        {
-            yield return StartCoroutine(GameUIController.stageClearEffect.Show());
-            playerData.stageIndex = Mathf.Min(playerData.stageIndex + 1, stageDatas.Length - 1);
-        }
-        IsFail = false;
-    }
-
-    public void OnTimeUp()
-    {
-        IsFail = true;
     }
 
     private void OnApplicationPause(bool pause)
@@ -117,4 +62,10 @@ public class GameManager : MonoBehaviour
     {
         Save();
     }
+
+    public void Save()
+    {
+        GameDataBase.Save(typeof(PlayerData).Name, playerData);
+    }
+
 }

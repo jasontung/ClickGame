@@ -7,17 +7,18 @@ public class EnemyController : MonoBehaviour
     public Transform enemySpawnPoint;
     private GameUIController gameUIController;
     private AudioController audioController;
-    
+    private GameStateData gameStateData;
 
     private void Awake()
     {
-        gameUIController = GameManager.GetInstance().GameUIController;
-        audioController = GameManager.GetInstance().AudioController;
+        gameStateData = GameFacade.GetInstance().gameStateData;
+        gameUIController = GameFacade.GetInstance().GameUIController;
+        audioController = GameFacade.GetInstance().AudioController;
     }
 
     public IEnumerator Execute()
     {
-        StageData stageData = GameManager.GetInstance().curStageData;
+        StageData stageData = gameStateData.CurStageData;
         audioController.PlayBattleSound();
         for (int i = 0; i < stageData.enemys.Length; i++)
         {
@@ -33,7 +34,7 @@ public class EnemyController : MonoBehaviour
             yield return StartCoroutine(enemy.Execute(enemyData));
             gameUIController.countDownTimerEffect.Hide();
             Destroy(enemy.gameObject);
-            if (GameManager.GetInstance().IsFail)
+            if (gameStateData.isFail)
                 yield break;
         }
     }
@@ -43,6 +44,6 @@ public class EnemyController : MonoBehaviour
         yield return StartCoroutine(gameUIController.countDownTimerEffect.Show(remainTime));
         if (enemy.IsDead)
             yield break;
-        GameManager.GetInstance().OnTimeUp();
+        gameStateData.isFail = true;
     }
 }

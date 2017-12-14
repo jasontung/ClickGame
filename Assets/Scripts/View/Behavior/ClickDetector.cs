@@ -10,7 +10,7 @@ public class ClickDetector : MonoBehaviour {
     private void Awake()
     {
         enemyBehavior = GetComponent<EnemyBehavior>();
-        playerController = GameManager.GetInstance().PlayerController;
+        playerController = GameFacade.GetInstance().PlayerController;
     }
 
     private void Update()

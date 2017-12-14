@@ -9,30 +9,14 @@ public class PlayerController : MonoBehaviour
     private int hitEffectUseIndex;
     private ParticleSystem[] hitEffects = new ParticleSystem[3];
     private GameUIController gameUIController;
-
-    public LevelData.LevelSetting CurLevelSetting
-    {
-        get
-        {
-            var index = Mathf.Min(playerData.lv - 1, levelData.levelSettings.Length - 1);
-            return levelData.levelSettings[index];
-        }
-    }
-
-    public LevelData.LevelSetting LastLevelSetting
-    {
-        get
-        {
-            var index = Mathf.Max(playerData.lv - 2, 0);
-            return levelData.levelSettings[index];
-        }
-    }
+    private GameStateData gameStateData;
 
     private void Awake()
     {
-        playerData = GameManager.GetInstance().playerData;
-        levelData = GameManager.GetInstance().levelData;
-        gameUIController = GameManager.GetInstance().GameUIController;
+        playerData = GameFacade.GetInstance().playerData;
+        levelData = GameFacade.GetInstance().levelData;
+        gameUIController = GameFacade.GetInstance().GameUIController;
+        gameStateData = GameFacade.GetInstance().gameStateData;
     }
 
     public void OnEnable()
@@ -46,12 +30,12 @@ public class PlayerController : MonoBehaviour
         {
             if(hitEffects[i] != null)
                 Destroy(hitEffects[i].gameObject);
-            hitEffects[i] = Instantiate(CurLevelSetting.hitEffect);
+            hitEffects[i] = Instantiate(levelData.CurLevelSetting.hitEffect);
         }
-        gameUIController.UpdateAttack(CurLevelSetting.attack);
+        gameUIController.UpdateAttack(levelData.CurLevelSetting.attack);
         gameUIController.UpdateCoin(playerData.coin);
         gameUIController.UpdateLv(playerData.lv);
-        gameUIController.UpdateExpSlider(playerData.exp, LastLevelSetting.exp, CurLevelSetting.exp);
+        gameUIController.UpdateExpSlider(playerData.exp, levelData.LastLevelSetting.exp, levelData.CurLevelSetting.exp);
     }
 
     public void AddCoin(int amount)
@@ -65,8 +49,8 @@ public class PlayerController : MonoBehaviour
         if (playerData.lv >= levelData.levelSettings.Length)
             return;
         playerData.exp += amount;
-        gameUIController.UpdateExpSlider(playerData.exp, LastLevelSetting.exp, CurLevelSetting.exp);
-        if (playerData.exp >= CurLevelSetting.exp)
+        gameUIController.UpdateExpSlider(playerData.exp, levelData.LastLevelSetting.exp, levelData.CurLevelSetting.exp);
+        if (playerData.exp >= levelData.CurLevelSetting.exp)
         {
             LevelUp();
         }
@@ -75,14 +59,14 @@ public class PlayerController : MonoBehaviour
     private void LevelUp()
     {
         playerData.lv = Mathf.Min(playerData.lv + 1, levelData.levelSettings.Length);
-        playerData.attack = CurLevelSetting.attack;
+        playerData.attack = levelData.CurLevelSetting.attack;
         RefreshPlayerData();
         StartCoroutine(gameUIController.levelUpEffect.Show());
     }
 
     public void OnClick(EnemyBehavior enemy)
     {
-        if (GameManager.GetInstance().IsFail)
+        if (gameStateData.isFail)
             return;
         if (enemy.IsDead)
             return;

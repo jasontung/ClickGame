@@ -11654,6 +11654,7 @@ GameObject:
   - component: {fileID: 1491023993}
   - component: {fileID: 1491023995}
   - component: {fileID: 1491023992}
+  - component: {fileID: 1491023996}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -11730,12 +11731,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4877d31f3aebb204399b9875cf4b5185, type: 2}
   levelData: {fileID: 11400000, guid: e698746f3dfd1ae4e89ae4b2f4837829, type: 2}
   playerData:
-    lv: 1
-    attack: 1
-    exp: 0
-    coin: 0
-    stageIndex: 0
+    lv: 10
+    attack: 10
+    exp: 2900
+    coin: 215
+    stageIndex: 2
   dropItemData: {fileID: 11400000, guid: 85a40979bd3df9f47985b976baef02e0, type: 2}
+  gameStateData:
+    isFail: 0
 --- !u!114 &1491023995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11756,6 +11759,17 @@ MonoBehaviour:
   stageClearEffect: {fileID: 1356121375}
   stageFailEffect: {fileID: 1077774972}
   countDownTimerEffect: {fileID: 97246162}
+--- !u!114 &1491023996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1491023989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3532ff310a8a4745a95dc05638c2c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1498814849
 GameObject:
   m_ObjectHideFlags: 0

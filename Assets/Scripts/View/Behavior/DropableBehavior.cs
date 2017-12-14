@@ -8,7 +8,7 @@ public class DropableBehavior : MonoBehaviour
     private DropItemData dropItemData;
     private void Awake()
     {
-        dropItemData = GameManager.GetInstance().dropItemData;
+        dropItemData = GameFacade.GetInstance().dropItemData;
     }
 
     public void CheckDropItem(int itemId, float dropProbability)

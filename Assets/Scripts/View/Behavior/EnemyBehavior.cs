@@ -16,6 +16,7 @@ public class EnemyBehavior : MonoBehaviour
     private DropableBehavior dropableBehavior;
     private PlayerController playerController;
     private EnemyData enemyData;
+    private GameStateData gameStateData;
     [SerializeField]
     private AudioClip hurtClip;
     [SerializeField]
@@ -37,7 +38,8 @@ public class EnemyBehavior : MonoBehaviour
         meshFader = GetComponent<MeshFader>();
         animator = GetComponent<Animator>();
         dropableBehavior = GetComponent<DropableBehavior>();
-        playerController = GameManager.GetInstance().PlayerController;
+        playerController = GameFacade.GetInstance().PlayerController;
+        gameStateData = GameFacade.GetInstance().gameStateData;
     }
 
     public IEnumerator Execute(EnemyData data)
@@ -46,7 +48,7 @@ public class EnemyBehavior : MonoBehaviour
         healthBehavior.Init(enemyData.health);
         while (IsDead == false)
         {
-            if (GameManager.GetInstance().IsFail)
+            if (gameStateData.isFail)
                 yield break;
             yield return null;
         }

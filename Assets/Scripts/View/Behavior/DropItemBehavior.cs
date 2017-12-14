@@ -19,7 +19,7 @@ public abstract class DropItemBehavior : MonoBehaviour, IPointerDownHandler
     {
         rigid = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        playerController = GameManager.GetInstance().PlayerController;
+        playerController = GameFacade.GetInstance().PlayerController;
         meshFader = GetComponent<MeshFader>();
         col = GetComponent<Collider>();
     }
