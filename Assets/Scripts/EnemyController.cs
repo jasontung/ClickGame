@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public Transform enemySpawnPoint;
     private GameUIController gameUIController;
     private AudioController audioController;
+    
 
     private void Awake()
     {
@@ -27,10 +28,21 @@ public class EnemyController : MonoBehaviour
                 yield return StartCoroutine(gameUIController.bossMsgEffect.Show());
             }
             EnemyBehavior enemy = Instantiate(enemyData.enemyPrefab, enemySpawnPoint.position, enemySpawnPoint.rotation);
+            if (enemyData.defeatTimeLimit > 0)
+                StartCoroutine(StartCountDownTimer(enemy, enemyData.defeatTimeLimit));
             yield return StartCoroutine(enemy.Execute(enemyData));
+            gameUIController.countDownTimerEffect.Hide();
             Destroy(enemy.gameObject);
             if (GameManager.GetInstance().IsFail)
                 yield break;
         }
+    }
+
+    private IEnumerator StartCountDownTimer(EnemyBehavior enemy, float remainTime)
+    {
+        yield return StartCoroutine(gameUIController.countDownTimerEffect.Show(remainTime));
+        if (enemy.IsDead)
+            yield break;
+        GameManager.GetInstance().OnTimeUp();
     }
 }
