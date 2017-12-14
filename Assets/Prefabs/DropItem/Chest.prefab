@@ -22,9 +22,7 @@ GameObject:
   - component: {fileID: 65936268644524218}
   - component: {fileID: 54612563884232104}
   - component: {fileID: 95894499471491082}
-  - component: {fileID: 114704886279324710}
   - component: {fileID: 82445070770189852}
-  - component: {fileID: 114645083206773452}
   m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
@@ -330,7 +328,7 @@ Animator:
   m_GameObject: {fileID: 1105694114827640}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ab95bb61f432a254cbe8c26dc7927926, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -338,31 +336,3 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114645083206773452
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1105694114827640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: faf5be30d03851a4f9168d658a0d1b31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionForce: 250
-  collectSound: {fileID: 8300000, guid: b785f65bda2be4e17958879a8f790690, type: 3}
---- !u!114 &114704886279324710
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1105694114827640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe657a1b77f8d244806f1c073836d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeRenderers:
-  - {fileID: 23169630689255274}
-  - {fileID: 23956841820112082}
-  speed: 2

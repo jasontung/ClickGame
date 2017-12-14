@@ -23,8 +23,6 @@ GameObject:
   - component: {fileID: 65112922597445012}
   - component: {fileID: 54229404749246262}
   - component: {fileID: 82193105399739744}
-  - component: {fileID: 114016154916123200}
-  - component: {fileID: 114408983699431362}
   m_Layer: 8
   m_Name: Coin
   m_TagString: Untagged
@@ -152,33 +150,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114016154916123200
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1772397431848220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7e470d610dc30941a0a7f954f9d0e55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionForce: 250
-  collectSound: {fileID: 8300000, guid: f55bb86f6af5d4f49b1e7e9cc12d0794, type: 3}
---- !u!114 &114408983699431362
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1772397431848220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffe657a1b77f8d244806f1c073836d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fadeRenderers:
-  - {fileID: 212628829989777010}
-  speed: 2
 --- !u!212 &212628829989777010
 SpriteRenderer:
   m_ObjectHideFlags: 1
