@@ -73,4 +73,27 @@ public class EnemyBehavior : MonoBehaviour
         audioSource.clip = hurtClip;
         audioSource.Play();
     }
+
+    private void Update()
+    {
+        if (IsDead)
+            return;
+#if UNITY_EDITOR
+        if (Input.GetButtonDown("Fire1"))
+        {
+            playerController.OnClick(this);
+        }
+#else
+        if(Input.touchCount > 0)
+        {
+            for(int i = 0; i < Input.touchCount; i++)
+            {
+                if(Input.GetTouch(i).phase == TouchPhase.Began)
+                {
+                    playerController.OnClick(this);
+                }
+            }
+        }
+#endif
+    }
 }
