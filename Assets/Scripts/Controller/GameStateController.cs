@@ -6,13 +6,11 @@ public class GameStateController : MonoBehaviour {
     private EnemyController enemyController;
     private AudioController audioController;
     private GameUIController gameUIController;
-    private PlayerData playerData;
     private GameStateData gameStateData;
     
     private void Awake()
     {
         Input.multiTouchEnabled = true;
-        playerData = GameFacade.GetInstance().playerData;
         gameStateData = GameFacade.GetInstance().gameStateData;
         audioController = GameFacade.GetInstance().AudioController;
         enemyController = GameFacade.GetInstance().EnemyController;

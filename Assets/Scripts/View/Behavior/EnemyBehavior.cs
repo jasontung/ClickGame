@@ -27,7 +27,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         get
         {
-            return healthBehavior.isDead;
+            return healthBehavior.IsOver;
         }
     }
 

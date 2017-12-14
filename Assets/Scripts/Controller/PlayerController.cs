@@ -68,8 +68,6 @@ public class PlayerController : MonoBehaviour
     {
         if (gameStateData.isFail)
             return;
-        if (enemy.IsDead)
-            return;
         enemy.DoDamage(playerData.attack);
         ParticleSystem hitEffect = hitEffects[hitEffectUseIndex];
         hitEffect.transform.position = enemy.hitPoint.position;

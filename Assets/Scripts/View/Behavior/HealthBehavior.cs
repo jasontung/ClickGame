@@ -9,7 +9,7 @@ public class HealthBehavior : MonoBehaviour {
     public float smooth = 5f;
     [SerializeField]
     private Slider healthSlider;
-    public bool isDead
+    public bool IsOver
     {
         get
         {
