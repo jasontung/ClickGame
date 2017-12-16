@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-public class HealthBehavior : MonoBehaviour {
+public class HealthComponent : MonoBehaviour {
 
     public int currentHealth;
     public float smooth = 5f;

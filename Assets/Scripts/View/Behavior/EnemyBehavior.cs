@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(HealthBehavior))]
+[RequireComponent(typeof(HealthComponent))]
 [RequireComponent(typeof(MeshFader))]
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Animator))]
@@ -10,7 +10,7 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     private Animator animator;
-    private HealthBehavior healthBehavior;
+    private HealthComponent healthBehavior;
     private MeshFader meshFader;
     private AudioSource audioSource;
     private DropableBehavior dropableBehavior;
@@ -33,7 +33,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Awake()
     {
-        healthBehavior = GetComponent<HealthBehavior>();
+        healthBehavior = GetComponent<HealthComponent>();
         audioSource = GetComponent<AudioSource>();
         meshFader = GetComponent<MeshFader>();
         animator = GetComponent<Animator>();
