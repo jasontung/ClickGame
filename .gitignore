@@ -1,3 +1,6 @@
 Temp/
 Library/
 *.apk
+*.suo
+*.csproj
+*.sln
