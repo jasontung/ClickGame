@@ -12,6 +12,16 @@ public class EnemyBehavior : MonoBehaviour {
     private HealthComponent healthComponent;
     [SerializeField]
     private AudioClip hurtClip;
+    [SerializeField]
+    private AudioClip deadClip;
+    public EnemyData enemyData;
+    public bool IsDead
+    {
+        get
+        {
+            return healthComponent.IsOver;
+        }
+    }
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -23,7 +33,26 @@ public class EnemyBehavior : MonoBehaviour {
     private void OnEnable()
     {
         StartCoroutine(meshFader.FadeIn());
-        healthComponent.Init(100);
+    }
+
+    [ContextMenu("Test Execute")]
+    private void TestExecute()
+    {
+        StartCoroutine(Execute(enemyData));
+    }
+
+    public IEnumerator Execute(EnemyData enemyData)
+    {
+        healthComponent.Init(enemyData.health);
+        while(IsDead == false)
+        {
+            yield return null;
+        }
+        animator.SetTrigger("die");
+        audioSource.clip = deadClip;
+        audioSource.Play();
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return StartCoroutine(meshFader.FadeOut());
     }
 
     public void DoDamage(int attack)
