@@ -5,15 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFader))]
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(HealthComponent))]
-public class EnemyBehavior : MonoBehaviour {
+public class EnemyBehavior : MonoBehaviour
+{
     private MeshFader meshFader;
     private Animator animator;
     private AudioSource audioSource;
     private HealthComponent healthComponent;
+    private PlayerController playerController;
     [SerializeField]
     private AudioClip hurtClip;
     [SerializeField]
     private AudioClip deadClip;
+    public Transform hitPoint;
     public bool IsDead
     {
         get
@@ -21,16 +24,15 @@ public class EnemyBehavior : MonoBehaviour {
             return healthComponent.IsOver;
         }
     }
-
     #region Public Method
     /// <summary>
     /// 請呼叫我 開始敵人生命邏輯
     /// </summary>
     /// <returns></returns>
-    public IEnumerator Execute()
+    public IEnumerator Execute(EnemyData data)
     {
-        healthComponent.Init(100);
-        while(IsDead == false)
+        healthComponent.Init(data.health);
+        while (IsDead == false)
         {
             yield return null;
         }
@@ -56,6 +58,7 @@ public class EnemyBehavior : MonoBehaviour {
         meshFader = GetComponent<MeshFader>();
         audioSource = GetComponent<AudioSource>();
         healthComponent = GetComponent<HealthComponent>();
+        playerController = GameFacade.GetInstance().PlayerController;
     }
 
     private void OnEnable()
@@ -63,17 +66,25 @@ public class EnemyBehavior : MonoBehaviour {
         StartCoroutine(meshFader.FadeIn());
     }
 
-    [ContextMenu("Test Execute")]
-    private void TestExecute()
-    {
-        StartCoroutine(Execute());
-    }
     private void Update()
     {
         if (IsDead)
             return;
-        if(Input.GetButtonDown("Fire1"))
-            DoDamage(50);
+#if UNITY_EDITOR
+        if (Input.GetButtonDown("Fire1"))
+            playerController.OnClick(this);
+#else
+        if (Input.touchCount > 0)
+        {
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                if (Input.GetTouch(i).phase == TouchPhase.Began)
+                {
+                    playerController.OnClick(this);
+                }
+            }
+        }
+#endif
     }
-    #endregion
+#endregion
 }
