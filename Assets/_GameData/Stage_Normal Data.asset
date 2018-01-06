@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c4a43b5242657c44883f6a1ccbeb776, type: 3}
-  m_Name: Stage_1 Data
+  m_Name: Stage_Normal Data
   m_EditorClassIdentifier: 
   enemys:
-  - health: 10
+  - health: 100
     willDropItemId: 0
     dropProbability: 0
     defeatTimeLimit: 0
     enemyPrefab: {fileID: 0}
-  - health: 20
+  - health: 200
     willDropItemId: 0
     dropProbability: 0
     defeatTimeLimit: 0
