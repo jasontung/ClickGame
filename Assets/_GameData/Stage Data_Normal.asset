@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Stage Data_Normal
   m_EditorClassIdentifier: 
   enemys:
-  - health: 100
+  - health: 999
     willDropItemID: 1
     dropProbability: 1
     defeatTimeLimit: 0
-    enemyPrefab: {fileID: 0}
+    enemyPrefab: {fileID: 114445049298450774, guid: 1314c0163caaabd41a9a14a2f72babc2,
+      type: 2}

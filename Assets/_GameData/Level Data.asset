@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Name: Level Data
   m_EditorClassIdentifier: 
   levelSettings:
-  - exp: 0
+  - exp: 20
     attack: 1
     hitEffect: {fileID: 198199364656435864, guid: 3579fa18583093041bb9f5121e89159e,
       type: 2}
-  - exp: 0
+  - exp: 100
     attack: 10
     hitEffect: {fileID: 198179774297216014, guid: 0571ddf4e7577274a9acbc5be94a4066,
       type: 2}
-  - exp: 0
+  - exp: 300
     attack: 20
     hitEffect: {fileID: 198635770447775954, guid: 2bc6ba5a6cebbce47bdd834030be501b,
       type: 2}

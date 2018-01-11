@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour {
     private LevelData levelData;
     private ParticleSystem[] hitEffects = new ParticleSystem[3];
     private int hitEffectUseIndex;
+    private GameUIController gameUIController;
     private void Awake()
     {
         playerData = GameFacade.GetInstance().playerData;
         levelData = GameFacade.GetInstance().levelData;
+        gameUIController = GameFacade.GetInstance().GameUIController;
     }
 
     private void OnEnable()
@@ -27,6 +29,35 @@ public class PlayerController : MonoBehaviour {
                 Destroy(hitEffects[i].gameObject);
             hitEffects[i] = Instantiate(levelData.CurLevelSetting.hitEffect);
         }
+        gameUIController.UpdateAttack(playerData.attack);
+        gameUIController.UpdateLv(playerData.lv);
+        int minExp = levelData.LastLevelSetting.exp;
+        int maxExp = levelData.CurLevelSetting.exp;
+        if (playerData.lv == 1)
+            minExp = 0;
+        gameUIController.UpdateExpSlider(playerData.exp, minExp, maxExp);
+    }
+
+    public void AddExp(int amount)
+    {
+        if (playerData.lv > levelData.levelSettings.Length)
+            return;
+        playerData.exp += amount;
+        int minExp = levelData.LastLevelSetting.exp;
+        int maxExp = levelData.CurLevelSetting.exp;
+        if (playerData.lv == 1)
+            minExp = 0;
+        gameUIController.UpdateExpSlider(playerData.exp, minExp, maxExp);
+        if (playerData.exp >= maxExp)
+            LevelUp();
+    }
+
+    private void LevelUp()
+    {
+        Debug.Log("[PlayerController] Level Up!!");
+        playerData.lv = Mathf.Min(playerData.lv + 1, levelData.levelSettings.Length);
+        playerData.attack = levelData.CurLevelSetting.attack;
+        RefreshPlayerData();
     }
 
     public void OnClick(EnemyBehavior enemy)

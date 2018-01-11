@@ -39,6 +39,7 @@ public class EnemyBehavior : MonoBehaviour
         animator.SetTrigger("die");
         audioSource.clip = deadClip;
         audioSource.Play();
+        playerController.AddExp(data.health);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
         yield return StartCoroutine(meshFader.FadeOut());
     }
